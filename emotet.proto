@@ -1,0 +1,37 @@
+syntax="proto2";
+
+message RegistrationRequestBody
+{
+	required int32 command = 1;
+	required string botId = 2;
+	required fixed32 osVersion = 3;
+	required fixed32 crc32 = 4;
+	required string procList = 5;
+	required bytes moduleList = 6;
+	required string unknown = 7;
+}
+message RegistrationRequest
+{
+	required int32 command = 1;
+	optional bytes data = 2;
+}
+
+message Module 
+{	
+	required int32 type = 1;
+	required bytes data = 2;
+}
+
+message RegistrationResponse
+{
+	optional bytes data = 1;
+	optional bytes modules = 2;
+	optional bytes unk = 3;	
+}
+
+message SpamRequestBody {
+    required int32  magicId = 1;
+    required string botId = 2;
+    required bytes  unk1 = 3;
+    required bytes  unk2 = 4;
+}
