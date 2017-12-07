@@ -2,11 +2,8 @@ from Crypto.PublicKey import RSA
 from Crypto.Cipher import AES, PKCS1_OAEP
 from Crypto.Signature import PKCS1_v1_5
 from Crypto.Hash import SHA, SHA256
-from google.protobuf.json_format import MessageToJson
 from datetime import datetime
-from collections import namedtuple
 import socket
-import json
 import binascii
 import struct
 import zlib
@@ -118,8 +115,10 @@ class client(object):
 		message.osVersion = self.conf['OsVersion']
 		message.crc32  = self.conf['VersionCRC']
 		message.procList = self.conf['ProcList']
-		message.moduleList = base64.b64decode(self.conf['ModuleList'])
 		message.unknown = self.conf['Unknown']
+		message.moduleList = ""
+		for mod in self.conf['ModuleList']:
+			message.moduleList += struct.pack("I", mod)
 		#Build outer message
 		req = emotet_pb2.RegistrationRequest()
 		req.command = 16
