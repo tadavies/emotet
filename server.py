@@ -1,5 +1,5 @@
 from BaseHTTPServer import BaseHTTPRequestHandler,HTTPServer
-import emotet
+import core.server as server
 
 PORT = 8080
 
@@ -7,7 +7,7 @@ PORT = 8080
 class EmotetServer(BaseHTTPRequestHandler):
 	def do_POST(self):
 		httpReqBody = self.rfile.read(int(self.headers['Content-Length']))
-		s = emotet.server()
+		s = server.server()
 		s.loadKey("testData/private.pem")
 		respData = s.parse(httpReqBody)
 		self.send_response(404)

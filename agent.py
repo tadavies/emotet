@@ -1,6 +1,6 @@
 import json
 import argparse
-import core.emotet
+import core.client as client
 
 def main():
 	parser = argparse.ArgumentParser()
@@ -10,8 +10,8 @@ def main():
 		return
 	
 	clientConfig = json.load(open(args.config))
-	client = core.emotet.client(clientConfig)
-	client.start()
+	c = client.client(clientConfig)
+	c.start()
 
 
 if __name__ == '__main__':
