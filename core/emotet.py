@@ -119,9 +119,8 @@ class server(object):
 			print MessageToJson(outer)
 
 class client(object):
-	def __init__(self, config=None, c2List=None):
+	def __init__(self, config=None):
 		self.rsaKey = None
-		self.c2List = c2List
 		self.conf = config
 		self.aesKey = '0123456789abcdef'
 		if self.conf != None:
@@ -273,7 +272,7 @@ class client(object):
 
 	def start(self):
 		request = self.getReqMessage()
-		for server in self.c2List:
+		for server in self.conf["C2List"]:
 			self.time = datetime.now().strftime('%Y%m%d_%H%M%S')
 			print "{0} Connecting to: {1}".format(self.time, server)
 			response = self.sendMsg(server, request)

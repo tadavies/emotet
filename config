@@ -1,0 +1,10 @@
+{
+	"BotId": "DESKTOPXO7LDD2E_5430495B",
+	"OsVersion": 9502730,
+	"VersionCRC": 3458175138,
+	"PublicKey": "-----BEGIN PUBLIC KEY-----\nMHwwDQYJKoZIhvcNAQEBBQADawAwaAJhAK2pprg8hyRrnEu8ffLK2odoewFfUdQa\nFjRElrzJUVGpQEOpLZ70Q4oLQOpAh62j3J2GPFJ6tQtDZRjcQAhKPNVDBBDxvyeZ\ndQaKkoRf4fb0/qczCyQiXY9SrQybhlep9wIDAQAB\n-----END PUBLIC KEY-----t",
+	"Unknown": "",
+	"ModuleList": "GQAAAA0AAAAMAAAACQAAANcAAAA=",
+	"ProcList": "chrome.exe,SearchUI.exe,ShellExperienceHost.exe,explorer.exe,ApplicationFrameHost.exe,conhost.exe,cmd.exe,dllhost.exe,rdpclip.exe,LogonUI.exe,RuntimeBroker.exe,SearchIndexer.exe,taskhostw.exe,sihost.exe,Memory Compression,SecurityHealthService.exe,spoolsv.exe,VSSVC.exe,dwm.exe,fontdrvhost.exe,svchost.exe,lsass.exe,services.exe,winlogon.exe,wininit.exe,csrss.exe,smss.exe,System,[System Process],",
+	"C2List": ["188.241.155.6:8080"]
+}
